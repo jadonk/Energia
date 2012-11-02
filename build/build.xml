@@ -19,6 +19,8 @@
 	     value="linux32"><os family="unix" arch="i386" /></condition>
   <condition property="platform" 
 	     value="linux64"><os family="unix" arch="amd64" /></condition>
+  <condition property="platform" 
+	     value="linux32"><os family="unix" arch="arm" /></condition>
 
   <!-- Libraries required for running energia -->
   <fileset dir=".." id="runtime.jars">
