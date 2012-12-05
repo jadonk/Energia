@@ -1,0 +1,9 @@
+AC_INIT([libarduino], [0.0])
+AC_LANG_CPLUSPLUS
+AM_INIT_AUTOMAKE
+LT_INIT
+AC_PROG_CXX
+AC_CONFIG_FILES([Makefile 
+	arduino.pc:arduino.pc.in])
+AC_CONFIG_MACRO_DIR([m4])
+AC_OUTPUT
