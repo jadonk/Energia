@@ -181,7 +181,7 @@ public class Compiler implements MessageConsumer {
     } else if (arch == "arduino") {
       baseCommandAR.add(basePath + "avr-ar");
     } else {
-      baseCommandAR.add(basePath + "ar");
+      baseCommandAR.add(basePath + "arm-linux-gnueabi-ar");
     }
 
   baseCommandAR.add("rcs");
@@ -218,7 +218,7 @@ public class Compiler implements MessageConsumer {
       baseCommandLinker.add("-mmcu=" + boardPreferences.get("build.mcu"));
       baseCommandLinker.add("-o");
     } else {
-      baseCommandLinker.add(basePath + "g++");
+      baseCommandLinker.add(basePath + "arm-linux-gnueabi-gcc");
       baseCommandLinker.add("-o");
     }
 
@@ -579,7 +579,7 @@ public class Compiler implements MessageConsumer {
 	baseCommandCompiler.add("-DF_CPU=" + boardPreferences.get("build.f_cpu"));
 	baseCommandCompiler.add("-DARDUINO=" + Base.REVISION);
     } else {
-	baseCommandCompiler.add(basePath + "g++");
+	baseCommandCompiler.add(basePath + "arm-linux-gnueabi-gcc");
 	baseCommandCompiler.add("-c"); // compile, don't link
     }
 
@@ -624,7 +624,7 @@ public class Compiler implements MessageConsumer {
 	baseCommandCompiler.add("-MMD"); // output dependancy info
 	baseCommandCompiler.add("-DARDUINO=" + Base.REVISION);
       } else {
-	baseCommandCompiler.add(basePath + "gcc");
+	baseCommandCompiler.add(basePath + "arm-linux-gnueabi-gcc");
 	baseCommandCompiler.add("-c"); // compile, don't link
       }
 
@@ -672,7 +672,7 @@ public class Compiler implements MessageConsumer {
 	baseCommandCompilerCPP.add("-MMD"); // output dependancy info
 	baseCommandCompilerCPP.add("-DARDUINO=" + Base.REVISION);
     } else {
-      baseCommandCompilerCPP.add(basePath + "g++");
+      baseCommandCompilerCPP.add(basePath + "arm-linux-gnueabi-g++");
       baseCommandCompilerCPP.add("-c"); // compile, don't link
     }
 
